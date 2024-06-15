@@ -1,0 +1,345 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: 'poppins', sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #fff;
+}
+
+#logo{
+  width: 65px;
+}
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
+  transition: background-color 0.3s,box-shadow 0.3s;
+}
+
+.navbar.sticky{
+    background-color: #333;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+
+}
+
+#nav-links{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#nav-links li{
+    list-style: none;
+    padding: 0 0.25rem;
+    margin: 0 0.55rem;
+}
+
+#nav-links li a{
+    color: aliceblue;
+    text-decoration: none;
+}
+
+#nav-links li a:hover{
+    color: #20d167b6;
+}
+
+#nav-links li a:active{
+    color: #000045;
+}
+
+.header-btn{
+    margin-top: 15px;
+}
+
+.hamburger, .close {
+    font-size: 2rem;
+    cursor: pointer;
+    display: none;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 4px 0;
+    transition: 0.4s;
+    border-radius: 10px;
+}
+
+/* This is where the close button should go but it hasn't yet been built. Will build it later */
+
+
+
+@media (max-width: 768px){
+    #logo{
+        width: 65px;
+    }
+
+    .navbar{
+        padding: 0 1rem 0 0;
+    }
+
+    #nav-links{
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: 80%;
+        height: 100%;
+        background-color: #fff;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        z-index: 9; 
+        padding-top: 2.5rem;
+        padding-left: 1.7rem;
+    }
+
+    #nav-links li {
+        margin: 3px 0;
+        padding-bottom: 10px;
+    }
+
+    #nav-links .sub-links-color{
+      color: #1c1c1c;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .close {
+        display: none; 
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        font-size: 30px;
+        color: #fff;
+        z-index: 10;
+    }
+
+    #nav-links.active {
+        transform: translateX(0);
+    }
+
+    .hamburger.active {
+        display: none;
+    }
+
+    .button-container{
+        display: flex;
+        margin-bottom: 30px;
+    }
+
+    .close.active {
+        display: block;
+    }
+
+    .overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); 
+        z-index: 8; 
+    }
+
+    .overlay.active {
+        display: block;
+    }
+}
+
+/* Safety Section */
+.hero {
+  position: relative;
+  text-align: center;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.layer{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:rgba(0, 0, 0, 0.2);
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-top: 20px;
+  color: #33cc33;
+  line-height: 1.2;
+}
+
+.hero h1 br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .hero h1{
+    font-size: 1.8em;
+  }
+}
+
+main {
+  padding: 50px auto;
+}
+
+.safety-measures {
+  text-align: center;
+}
+
+.safety-measures h2 {
+  font-size: 2em;
+  margin-bottom: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+  width: 90%;
+  margin: 50px auto;
+}
+
+article {
+  background-color: #f6bfbf;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+article h3 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+article i {
+  font-size: 3em;
+  color: #33cc33;
+  margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+  background-color: #010201;
+  padding: 20px 0;
+  color: #fff;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 60px;
+}
+
+.footer-image-logo{
+  width: 80px;
+}
+.column {
+  flex: 1;
+  padding: 0 20px;
+}
+
+.column h3 {
+  margin-top: 0;
+  color: #ffffff;
+}
+
+.column ul {
+  list-style-type: none;
+  padding-left: 10px;
+}
+
+.column ul li {
+  margin-bottom: 5px;
+  color: #f1f1f1;
+}
+
+.column ul li i {
+  margin-right: 5px;
+}
+
+.icon-container {
+  margin-left: 10px;
+}
+
+.bi-geo-alt {
+  color: #007bff;
+}
+
+.bi-envelope {
+  color: brown;
+}
+
+.bi-whatsapp {
+  color: #25d366;
+}
+
+.bi-facebook-f {
+  color: #1877f2;
+}
+
+.bi-instagram {
+  color: #833ab4;
+}
+
+.bi-twitter {
+  color: #1da1f2;
+}
+
+.bi-youtube {
+  color: #ff0000;
+}
+
+.bi-linkedin-in {
+  color: #0077b5;
+}
+
+@media (max-width: 768px){
+  .footer-container {
+    display: inline-block;
+    width: 100%;
+  }
+
+  .footer-image-logo{
+    width: 40px;
+  }
+
+  .column {
+    padding: 0px 0px 10px 10px;
+  }
+
+  .column h3 {
+    margin-top: 0;
+  }
+}
+
+/* Button Navigation Section */
+#scrollBtn {
+  position: fixed;
+  bottom: 50px;
+  right: 8px;
+  display: none;
+}
+
+.bi-arrow-up-circle-fill {
+  font-size: 40px;
+  color: #33cc33;
+}
