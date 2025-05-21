@@ -10,11 +10,11 @@ body {
   background-color: #fff;
 }
 
-#discover-btn{
-  border: 2px solid #fff;
+#discover-btn {
+  border: 1px solid #fff;
   outline: none;
   background-color: transparent;
-  padding:6px 14px;
+  padding: 6px 14px;
   cursor: pointer;
   margin-left: 2rem;
   color: #fff;
@@ -22,98 +22,108 @@ body {
   border-radius: 4px;
 }
 
-#logo{
+#logo {
   width: 65px;
 }
 
-header{
+header {
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-  url("../images_folder/image2.jpg");
+    url('../images_folder/image2.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   height: 100vh;
 }
 
-@media (max-width: 768px){
-  header{
+@media (max-width: 768px) {
+  header {
     height: 70vh;
   }
 }
 
-.navbar{
+.navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  margin-top: 30px;
   position: fixed;
   width: 100%;
   z-index: 999;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0);
-  transition: background-color 0.3s,box-shadow 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
 
-.navbar.sticky{
+.navbar.sticky {
   background-color: #333;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  margin-top: 0px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-#nav-links{
+#nav-links {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
-#nav-links li{
+#nav-links li {
   list-style: none;
   padding: 0 0.25rem;
   margin: 0 0.55rem;
 }
 
-#nav-links li a{
+#nav-links li a {
   color: aliceblue;
   text-decoration: none;
 }
 
-#nav-links li a:hover{
+#nav-links li a:hover {
   color: #20d167b6;
 }
 
-#nav-links li a:active{
+#nav-links li a:active {
   color: #000045;
 }
 
-.header-btn{
-  margin-top: 15px;
+.header-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+  gap: 10px;
 }
 
-.viewMore{
+.viewMore {
   border: none;
   outline: none;
+  border-radius: 2px;
   background-color: #33cc33;
-  padding:6px 14px;
+  padding: 6px 14px;
   cursor: pointer;
   color: #fff;
   text-decoration: none;
 }
 
-.discoverMore{
+.discoverMore {
   border: none;
+  border-radius: 2px;
   outline: none;
   background-color: #fff;
-  padding:6px 14px;
+  padding: 6px 14px;
   cursor: pointer;
   color: #33cc33;
   text-decoration: none;
 }
 
-.hamburger, .close {
+.hamburger,
+.close {
   font-size: 2rem;
   cursor: pointer;
   display: none;
 }
 
-.bar1, .bar2, .bar3 {
+.bar1,
+.bar2,
+.bar3 {
   width: 25px;
   height: 3px;
   background-color: #fff;
@@ -124,18 +134,16 @@ header{
 
 /* This is where the close button should go but it hasn't yet been built. Will build it later */
 
-
-
-@media (max-width: 768px){
-  #logo{
+@media (max-width: 768px) {
+  #logo {
     width: 65px;
   }
 
-  .navbar{
+  .navbar {
     padding: 0 1rem 0 0;
   }
 
-  #nav-links{
+  #nav-links {
     flex-direction: column;
     position: fixed;
     top: 0;
@@ -145,7 +153,7 @@ header{
     background-color: #fff;
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
-    z-index: 9; 
+    z-index: 9;
     padding-top: 2.5rem;
     padding-left: 1.7rem;
   }
@@ -155,11 +163,11 @@ header{
     padding-bottom: 10px;
   }
 
-  #nav-links .sub-links-color{
+  #nav-links .sub-links-color {
     color: #1c1c1c;
   }
 
-  #discover-btn{
+  #discover-btn {
     margin-left: 0rem;
     color: #333;
     border: 2px solid #333;
@@ -170,7 +178,7 @@ header{
   }
 
   .close {
-    display: none; 
+    display: none;
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -187,7 +195,7 @@ header{
     display: none;
   }
 
-  .button-container{
+  .button-container {
     display: flex;
     margin-bottom: 30px;
   }
@@ -203,8 +211,8 @@ header{
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
-    z-index: 8; 
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 8;
   }
 
   .overlay.active {
@@ -213,7 +221,7 @@ header{
 }
 
 /* Header-Container Section */
-.header-container{
+.header-container {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -223,51 +231,65 @@ header{
   margin: 0 auto;
 }
 
-#l-head{
-  color: #FFFFFF;
+#l-head {
+  color: #ffffff;
   font-weight: 500;
   font-size: 48px;
 }
 
-#p-text{
+#l-head::after,
+#p-text::after {
+  content: '';
+  animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+#p-text {
   color: #f6f6f6;
   font-size: 18px;
 }
 
-
-@media (max-width: 768px){
-  #l-head{
+@media (max-width: 768px) {
+  #l-head {
     font-weight: 800;
     font-size: 30px;
     text-align: left;
   }
 
-  #p-text{
+  #p-text {
     margin: 1rem 0;
     font-size: 18px;
     text-align: left;
   }
 
-  .header-container{
+  .header-container {
     width: 80%;
-    margin: 0 auto; 
+    margin: 0 auto;
     top: 40%;
   }
 
-  .header-btn{
+  .header-btn {
     margin-top: 10px;
     text-align: left;
   }
 
-  .viewMore{
+  .viewMore {
     padding: 5px 9px;
   }
 
-  .discoverMore{
+  .discoverMore {
     padding: 5px 9px;
   }
 }
-
 
 /* Column Container Section */
 .column-container-main {
@@ -288,7 +310,6 @@ p {
   font-weight: 300;
   line-height: 22px;
 }
-
 
 h1 {
   font-size: 36px;
@@ -371,20 +392,20 @@ h3 {
 }
 
 @media (max-width: 768px) {
-  .col-column{
+  .col-column {
     margin-bottom: 5%;
     border-radius: 5px;
   }
 
-  .row{
+  .row {
     flex-direction: column;
   }
 
-  #column-primary-head{
+  #column-primary-head {
     font-size: 20px;
   }
 
-  .col-column-text{
+  .col-column-text {
     text-align: left;
   }
 }
@@ -446,11 +467,10 @@ h3 {
     border-radius: 2px;
   }
 
-  .about-us-container-text{
+  .about-us-container-text {
     margin: 0 3%;
   }
 }
-  
 
 .divider {
   display: flex;
@@ -470,7 +490,7 @@ h3 {
   margin-right: 10px;
 }
 
-#span-text{
+#span-text {
   font-size: 28px;
 }
 
@@ -480,7 +500,7 @@ h3 {
   padding-bottom: 100px;
 }
 
-.what-we-do-text{
+.what-we-do-text {
   padding: 10px;
 }
 
@@ -547,7 +567,7 @@ h3 {
 
 @media (max-width: 768px) {
   /* What we do */
-  #span-text{
+  #span-text {
     font-size: 20px;
   }
 
@@ -566,7 +586,7 @@ h3 {
     margin-top: 100px;
   }
 
-  .what-we-do-head-container{
+  .what-we-do-head-container {
     width: 150px;
     position: relative;
     top: 14px;
@@ -591,9 +611,6 @@ h3 {
   margin: 50px auto;
 }
 
-
-
-
 .video-container {
   position: relative;
   width: 100%;
@@ -603,7 +620,7 @@ h3 {
   width: 600px;
   height: auto;
   display: block;
-  filter: brightness(0.4); 
+  filter: brightness(0.4);
 }
 
 .wave-button {
@@ -633,11 +650,10 @@ h3 {
   animation: wave-animation 5s infinite ease-in-out;
 }
 
-
 @keyframes wave-animation {
   50% {
     transform: translate(-50%, -50%) scale(1);
-  }  
+  }
 }
 
 .play-icon {
@@ -656,18 +672,18 @@ h3 {
   padding: 2rem;
 }
 
-.video-sub-content{
+.video-sub-content {
   text-align: left;
 }
 
-#l-video-head{
+#l-video-head {
   font-size: 37px;
   font-weight: 600;
   color: #222222;
   letter-spacing: 1px;
 }
 
-#video-text{
+#video-text {
   color: #444;
 }
 
@@ -689,8 +705,7 @@ h3 {
     position: absolute;
   }
 
-
-  .video{
+  .video {
     width: 100%;
     height: auto;
   }
@@ -699,7 +714,7 @@ h3 {
     padding: 1rem;
   }
 
-  #l-video-head{
+  #l-video-head {
     font-size: 22px;
     font-weight: 500;
     color: #222222;
@@ -806,17 +821,16 @@ h3 {
 @media (max-width: 768px) {
   .event-activities-col {
     margin-bottom: 15%;
-    margin-top: 5%; 
+    margin-top: 5%;
   }
 }
-
 
 /* Call To Action */
 .cta {
   margin: 100px auto;
   width: 95%;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-      url("../images_folder/image1.jpg");
+    url('../images_folder/image1.jpg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -945,7 +959,7 @@ footer {
   margin-top: 60px;
 }
 
-.footer-image-logo{
+.footer-image-logo {
   width: 80px;
 }
 .column {
@@ -1008,13 +1022,13 @@ footer {
   color: #0077b5;
 }
 
-@media (max-width: 768px){
+@media (max-width: 768px) {
   .footer-container {
     display: inline-block;
     width: 100%;
   }
 
-  .footer-image-logo{
+  .footer-image-logo {
     width: 40px;
   }
 
